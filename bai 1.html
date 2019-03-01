@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" onchange="">
+    Acount: <input type="text" id="currencyInput" >
+    From Currency:
+    <select name="" id="currencyFrom">
+        <option value="vnd">VND</option>
+        <option value="usd">USD</option>
+    </select>
+    To Currency:
+    <select name="" id="currencyTo">
+        <option value="vnd">VND</option>
+        <option value="usd">USD</option>
+    </select>
+
+    <button type="button" onclick="sum()">Conver</button>
+    <div id='ketqua'></div>
+</form>
+
+
+<script>
+    function sum()
+    {
+        let a= parseInt(document.getElementById('currencyInput').value);
+        let result;
+        let currencyFrom = document.getElementById('currencyFrom').value;
+        let currencyTo = document.getElementById('currencyTo').value;
+        if(currencyFrom === 'usd'&& currencyTo === 'vnd'){
+            result = a* 23000;
+        }else if( currencyFrom == 'vnd' && currencyTo === 'usd'){
+            result = a * (1/23000);
+        }
+        document.getElementById('ketqua').innerHTML = result;
+    }
+
+</script>
+</body>
+</html>
